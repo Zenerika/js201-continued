@@ -20,7 +20,15 @@
 // isVowel('A') --> true
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
-
+function isVowel(character) {
+  character = String(character)
+  character = character.toUpperCase();
+  if (character === 'A' || character === 'E' || character === 'I' || character === 'O' || character === 'U') {
+    return true
+  } else {
+    return false
+  }
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -36,7 +44,21 @@
 // isOdd(5) --> true
 // isOdd('7') --> false
 // isOdd(3.14) --> false
+function isEven(number) {
+  if (number % 2 === 0) {
+    return true
+  } else {
+    return false
+  }
+}
 
+function isOdd(number) {
+  if (number % 2 !== 0 && number % 1 === 0) {
+    return true
+  } else {
+    return false
+  }
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -52,3 +74,7 @@
 // isCapitalCity('Texas', 'Houston') --> false
 // isCapitalCity('Alaska', 'Juneau') --> true
 // isCapitalCity('Strawberry', 'Mango') --> false
+
+function isCapitalCity() {
+
+}
