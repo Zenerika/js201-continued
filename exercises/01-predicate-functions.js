@@ -20,17 +20,12 @@
 // isVowel('A') --> true
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
-function isVowel(character) {
-  character = String(character)
-  character = character.toUpperCase();
-  if (character === 'A' || character === 'E' || character === 'I' || character === 'O' || character === 'U') {
-    return true
-  } else {
-    return false
-  }
-}
-console.log(isVowel('c'))
+const vowelsArr = 'aeiou'.split('')
 
+function isVowel(str) {
+  if (typeof str !== 'string') return false
+  return vowelsArr.indexOf(str.toLowerCase()) !== -1
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write two functions: "isEven" and "isOdd" that take a number argument and
@@ -75,9 +70,15 @@ function isOdd(number) {
 // isCapitalCity('Texas', 'Houston') --> false
 // isCapitalCity('Alaska', 'Juneau') --> true
 // isCapitalCity('Strawberry', 'Mango') --> false
-
-function isCapitalCity(stateToCheck, cityToCheck) {
-  const map = [“Alabama”: “Montgomery”, “Alaska”: “Juneau”, “Arizona”: “Phoenix”, “Arkansas”: “Little Rock”, “California”: “Sacramento”, “Colorado”: “Denver”, “Connecticut”: “Hartford”, “Delaware”: “Dover”, “Florida”: “Tallahassee”, “Georgia”: “Atlanta”, “Hawaii”: “Honolulu”, “Idaho”: “Boise”, “Illinois”: “Springfield”, “Indiana”: “Indianapolis”, “Iowa”: “Des Moines”, “Kansas”: “Topeka”, “Kentucky”: “Frankfort”, “Louisiana”: “Baton Rouge”, “Maine”: “Augusta”, “Maryland”: “Annapolis”, “Massachusetts”: “Boston”, “Michigan”: “Lansing”, “Minnesota”: “Saint Paul”, “Mississippi”: “Jackson”, “Missouri”: “Jefferson City”, “Montana”: “Helana”, “Nebraska”: “Lincoln”, “Nevada”: “Carson City”, “New Hampshire”: “Concord”, “New Jersey”: “Trenton”, “New Mexico”: “Santa Fe”, “New York”: “Albany”, “North Carolina”: “Raleigh”, “North Dakota”: “Bismarck”, “Ohio”: “Columbus”, “Oklahoma”: “Oklahoma City”, “Oregon”: “Salem”, “Pennsylvania”: “Harrisburg”, “Rhode Island”: “Providence”, “South Carolina”: “Columbia”, “South Dakota”: “Pierre”, “Tennessee”: “Nashville”, “Texas”: “Austin”, “Utah”: “Salt Lake City”, “Vermont”: “Montpelier”, “Virginia”: “Richmond”, “Washington”: “Olympia”, “West Virginia”: “Charleston”, “Wisconsin”: “Madison”, “Wyoming”: “Cheyenne”]
-  if (!map.hasOwnProperty(stateToCheck)) return false
-  if (!map.hasOwnProperty(cityToCheck)) return false
-  console.log(isCapitalCity('Texas', 'Austin'))
+const map = {"Alabama":"Montgomery","Alaska":"Juneau","Arizona":"Phoenix","Arkansas":"Little Rock","California":"Sacramento","Colorado":"Denver","Connecticut":"Hartford","Delaware":"Dover","Florida":"Tallahassee","Georgia":"Atlanta","Hawaii":"Honolulu","Idaho":"Boise","Illinois":"Springfield","Indiana":"Indianapolis","Iowa":"Des Moines","Kansas":"Topeka","Kentucky":"Frankfort","Louisiana":"Baton Rouge","Maine":"Augusta","Maryland":"Annapolis","Massachusetts":"Boston","Michigan":"Lansing","Minnesota":"Saint Paul","Mississippi":"Jackson","Missouri":"Jefferson City","Montana":"Helana","Nebraska":"Lincoln","Nevada":"Carson City","New Hampshire":"Concord","New Jersey":"Trenton","New Mexico":"Santa Fe","New York":"Albany","North Carolina":"Raleigh","North Dakota":"Bismarck","Ohio":"Columbus","Oklahoma":"Oklahoma City","Oregon":"Salem","Pennsylvania":"Harrisburg","Rhode Island":"Providence","South Carolina":"Columbia","South Dakota":"Pierre","Tennessee":"Nashville","Texas":"Austin","Utah":"Salt Lake City","Vermont":"Montpelier","Virginia":"Richmond","Washington":"Olympia","West Virginia":"Charleston","Wisconsin":"Madison","Wyoming":"Cheyenne"}
+  
+  function isCapitalCity(state,city){
+    if (map[state]) {
+      if (map[state] === city) {
+          return true
+      } 
+      
+    }
+    return false
+}
+return (isCapitalCity('Texas','Austin'))

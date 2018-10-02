@@ -44,24 +44,15 @@ findLongestWord("book full of dogs")
 // nicer('mom get the heck in here and bring me a darn sandwich.')
 // > 'mom get the in here and bring me a sandwich.'
 function nicer(str) {
-  var re = /heck|darn|dang|crappy/
-  var str = "mom get the heck in here and bring me a darn sandwich."
-  var newstr = str.replace(re, "a")
-  return nicer(newstr)
+    const stringArray = str.split(" ")
+    for (i = 0; i < stringArray.length; i++) {
+        if (stringArray[i] === ("heck" || "darn" || "dang" || "crappy")) {
+            stringArray.splice(i, 1)
+        }
+    }
+    return stringArray.join(" ")
 }
-return nicer
 
-// Option B
-
-function nicer(str) {
-  str.replace(/heck|darn|dang|crappy/g, 'a')
-}
-return nicer("mom get the heck in here and bring me a darn sandwich.")
-
-// Tip: https://codersblock.com/blog/javascript-string-replace-magic/
-// var str = 'Waiting on Zoe, Elena, and Cal.';
-// str.replace(/zoe|elena|cal/gi, 'someone');
-// "Waiting on someone, someone, and someone."
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "capitalizeAll"

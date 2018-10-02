@@ -9,13 +9,14 @@
 // Examples:
 // fizzbuzz(3) --> '..fizz'
 // fizzbuzz(15) --> '..fizz.buzzfizz..fizzbuzz.fizz..fizzbuzz'
-function fizzbuzz (num) {
-var fizzbuzzString = str
-for (i = 0; i < fizzbuzz.length; i++) {
-    if (i !== (i % 5 || i % 5)) {
-        ("." + fizzbuzzString)
+function fizzbuzz(num) {
+  var fizzbuzzString = str
+  str = 'fizz'
+  for (i = 0; i < fizzbuzz.length; i++) {
+    if (i !== (i % 3 || i % 5)) {
+      return fizzbuzzString + "."
     }
-    
+
+  }
 }
-}
-reutnr fizzbuzz(3)
+return fizzbuzz(3)
